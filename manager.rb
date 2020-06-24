@@ -24,6 +24,9 @@ class Employee
   employee2.print_info
   
   class Manager < Employee
+    attr_reader :send_report
+    attr_writer :send_report
+
     def initialize(input_options)
       super
       @employees = input_options[:employees]
@@ -31,8 +34,9 @@ class Employee
 
     def give_all_raises
         i = 0
-        while i < Employee.length
+        while i < :employee.length
             @salary = 1.05 * @salary
+            i += 1
         end
 
   
@@ -42,7 +46,9 @@ class Employee
       puts "Email sent!"
     end
   end
+end
   
   manager = Manager.new(first_name: "Saron", last_name: "Yitbarek", salary: 100000, active: true, employees: [employee1, employee2])
-  manager.print_info
-  manager.send_report
+  #manager.print_info
+  #manager.send_report
+  manager.give_all_raises
