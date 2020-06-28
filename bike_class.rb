@@ -16,7 +16,7 @@ class Bike
     def turn(new_direction)
       @direction = new_direction
     end
-  
+    
     def ring_bell
       puts "Ring ring!"
     end
